@@ -23301,7 +23301,7 @@ L 71.620312 50.094687
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.1.3.-Sine-basis-(5-marks)">1.1.3. Sine basis (5 marks)<a class="anchor-link" href="#1.1.3.-Sine-basis-(5-marks)">&#182;</a></h3>
+<h3 id="1.1.3.-Sine-basis">1.1.3. Sine basis<a class="anchor-link" href="#1.1.3.-Sine-basis">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -27727,7 +27727,7 @@ Average MSE for 20 iterations: training - 83.4647254620539, testing - 86.5347353
     <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">kernel</span><span class="p">,</span><span class="n">reg_param</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alpha_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">kernel</span><span class="o">+</span><span class="n">reg_param</span><span class="o">*</span><span class="n">kernel</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">kernel</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span><span class="nd">@y</span>
     <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">kernel</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha_</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">kernel</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">return</span> <span class="n">kernel</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha_</span>
     <span class="k">def</span> <span class="nf">mse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">pred</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="nb">abs</span><span class="p">(</span><span class="n">pred</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="n">pred</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
